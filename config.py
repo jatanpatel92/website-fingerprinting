@@ -10,15 +10,16 @@ from Packet import Packet
 # * weka-X-Y-Z (see WEKA_ROOT to change the weka version)
 # * pcap-logs (a diretory that contains all of the LL pcap files)
 # * [optional] (a directory that contains custom/local python modules)
-BASE_DIR        = ''
+BASE_DIR        = '/home/ubuntu/workspace'
+PY_DIR = '/usr/lib/'
 
 # Enviromental settings
 JVM_MEMORY_SIZE = '4192m'
 
-WEKA_ROOT          = os.path.join(BASE_DIR   ,'weka-3-7-5')
+WEKA_ROOT          = os.path.join(BASE_DIR   ,'weka-3-8-0')
 WEKA_JAR           = os.path.join(WEKA_ROOT  ,'weka.jar')
 PCAP_ROOT          = os.path.join(BASE_DIR   ,'pcap-logs')
-PYTHON_ROOT        = os.path.join(BASE_DIR   ,'python2.4')
+PYTHON_ROOT        = os.path.join( PY_DIR  ,'python2.7')
 PYTHONPATH         = os.path.join(PYTHON_ROOT,'lib/python')
 CACHE_DIR          = './cache'
 COUNTERMEASURE_DIR = './countermeasures'
@@ -28,8 +29,8 @@ OUTPUT_DIR         = './output'
 #Specify options for Herrmann MySQL database
 MYSQL_HOST = 'localhost'
 MYSQL_DB = 'fingerprints'
-MYSQL_USER = 'fingerprints'
-MYSQL_PASSWD = 'fingerprints'
+MYSQL_USER = 'root'
+MYSQL_PASSWD = ''
 
 sys.path.append(PYTHONPATH)
 sys.path.append(COUNTERMEASURE_DIR)
@@ -38,7 +39,7 @@ sys.path.append(CLASSIFIERS_DIR)
 COUNTERMEASURE      = 0
 CLASSIFIER          = 0
 BUCKET_SIZE         = 2
-DATA_SOURCE         = 1
+DATA_SOURCE         = 0
 NUM_TRAINING_TRACES = 16
 NUM_TESTING_TRACES  = 4
 NUM_TRIALS          = 1
@@ -48,40 +49,40 @@ IGNORE_ACK          = True
 
 # Liberatore and Levine Training and Testing configuration
 DATA_SET = [
-#{'month':2,'day':10,'hour':13},
-#{'month':2,'day':11,'hour':11},
-#{'month':2,'day':13,'hour':8},
-#{'month':2,'day':13,'hour':19},
-#{'month':2,'day':14,'hour':9},
-#{'month':2,'day':14,'hour':23},
-#{'month':2,'day':15,'hour':8},
-#{'month':2,'day':16,'hour':12},
-#{'month':2,'day':20,'hour':10},
-#{'month':2,'day':20,'hour':16},
-#{'month':2,'day':20,'hour':22},
-#{'month':2,'day':21,'hour':4},
-#{'month':2,'day':21,'hour':10},
-#{'month':2,'day':21,'hour':16},
-#{'month':2,'day':21,'hour':22},
-#{'month':2,'day':22,'hour':4},
-#{'month':2,'day':22,'hour':10},
-#{'month':2,'day':22,'hour':16},
-#{'month':2,'day':22,'hour':22},
-#{'month':2,'day':23,'hour':4},
-#{'month':2,'day':23,'hour':10},
-#{'month':2,'day':20,'hour':10},
-#{'month':2,'day':20,'hour':16},
-#{'month':2,'day':20,'hour':22},
-#{'month':2,'day':21,'hour':4},
-#{'month':2,'day':21,'hour':10},
-#{'month':2,'day':21,'hour':16},
-#{'month':2,'day':21,'hour':22},
-#{'month':2,'day':22,'hour':4},
-#{'month':2,'day':22,'hour':10},
-#{'month':2,'day':22,'hour':16},
-#{'month':2,'day':22,'hour':22},
-#{'month':2,'day':23,'hour':4},
-#{'month':2,'day':23,'hour':10},
+{'month':2,'day':10,'hour':13},
+{'month':2,'day':11,'hour':11},
+{'month':2,'day':13,'hour':8},
+{'month':2,'day':13,'hour':19},
+{'month':2,'day':14,'hour':9},
+{'month':2,'day':14,'hour':23},
+{'month':2,'day':15,'hour':8},
+{'month':2,'day':16,'hour':12},
+{'month':2,'day':20,'hour':10},
+{'month':2,'day':20,'hour':16},
+{'month':2,'day':20,'hour':22},
+{'month':2,'day':21,'hour':4},
+{'month':2,'day':21,'hour':10},
+{'month':2,'day':21,'hour':16},
+{'month':2,'day':21,'hour':22},
+{'month':2,'day':22,'hour':4},
+{'month':2,'day':22,'hour':10},
+{'month':2,'day':22,'hour':16},
+{'month':2,'day':22,'hour':22},
+{'month':2,'day':23,'hour':4},
+{'month':2,'day':23,'hour':10},
+{'month':2,'day':20,'hour':10},
+{'month':2,'day':20,'hour':16},
+{'month':2,'day':20,'hour':22},
+{'month':2,'day':21,'hour':4},
+{'month':2,'day':21,'hour':10},
+{'month':2,'day':21,'hour':16},
+{'month':2,'day':21,'hour':22},
+{'month':2,'day':22,'hour':4},
+{'month':2,'day':22,'hour':10},
+{'month':2,'day':22,'hour':16},
+{'month':2,'day':22,'hour':22},
+{'month':2,'day':23,'hour':4},
+{'month':2,'day':23,'hour':10},
 {'month':3,'day':6,'hour':16},
 {'month':3,'day':6,'hour':22},
 {'month':3,'day':7,'hour':4},
@@ -199,22 +200,22 @@ DATA_SET = [
 {'month':4,'day':8,'hour':4},
 {'month':4,'day':8,'hour':10},
 {'month':4,'day':8,'hour':16},
-#{'month':4,'day':13,'hour':22},
-#{'month':4,'day':14,'hour':4},
-#{'month':4,'day':14,'hour':10},
-#{'month':4,'day':14,'hour':16},
-#{'month':4,'day':14,'hour':22},
-#{'month':4,'day':15,'hour':4},
-#{'month':4,'day':15,'hour':10},
-#{'month':4,'day':15,'hour':16},
-#{'month':4,'day':15,'hour':22},
-#{'month':4,'day':16,'hour':4},
-#{'month':4,'day':16,'hour':16},
-#{'month':4,'day':16,'hour':22},
-#{'month':4,'day':18,'hour':16},
-#{'month':4,'day':18,'hour':22},
-#{'month':4,'day':19,'hour':4},
-#{'month':4,'day':19,'hour':10},
+{'month':4,'day':8,'hour':22},
+{'month':4,'day':10,'hour':10},
+{'month':4,'day':10,'hour':16},
+{'month':4,'day':10,'hour':22},
+{'month':4,'day':11,'hour':4},
+{'month':4,'day':11,'hour':10},
+{'month':4,'day':11,'hour':16},
+{'month':4,'day':11,'hour':22},
+{'month':4,'day':12,'hour':4},
+{'month':4,'day':12,'hour':10},
+{'month':4,'day':12,'hour':16},
+{'month':4,'day':12,'hour':22},
+{'month':4,'day':13,'hour':4},
+{'month':4,'day':13,'hour':10},
+{'month':4,'day':13,'hour':10},
+{'month':4,'day':13,'hour':16},
 #{'month':4,'day':19,'hour':16},
 #{'month':4,'day':19,'hour':22},
 #{'month':4,'day':20,'hour':4},

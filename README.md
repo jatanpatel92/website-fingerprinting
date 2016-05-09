@@ -1,3 +1,16 @@
+Instructions to execute:
+
+Please install required system dependencies and requirements shown under Traffic Analysis Framework.
+
+Once you have set up your platform, run the following commands into a terminal:
+
+1) python model1.py -N 2000 -k 64 > Model1Logs.txt
+2) python model2.py -N 2000 -k 64 > Model2Logs.txt
+3) python model3.py -N 2000 -k 64 > Model3Logs.txt
+
+Thanks.
+
+
 Traffic Analysis Framework
 ==========================
 
